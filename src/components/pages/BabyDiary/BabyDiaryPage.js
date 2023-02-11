@@ -34,6 +34,10 @@ const BabyDiaryPage = () => {
   const [img, setImg] = useState("");
   const navigate = useNavigate();
 
+  const loCrl = [];
+  const loAc = [];
+  const loFl = [];
+  const loWeek = [];
   useEffect(() => {
     axios
       .post("http://127.0.0.1:3001/babyDiary", {
@@ -48,6 +52,11 @@ const BabyDiaryPage = () => {
           setfl(res.data.bl_fl);
           setweek(res.data.bl_week);
           setDetail(res.data.bl_detail);
+          loCrl.push(res.data.bl_crl);
+          loAc.push(res.data.bl_ac);
+          loFl.push(res.data.bl_fl);
+          loWeek.push(res.data.bl_week);
+
           let imgDt;
           let encode = Buffer.from(res.data.bl_img[0].data).toString("base64");
           imgDt = "data:image/png;base64," + encode;
@@ -68,7 +77,9 @@ const BabyDiaryPage = () => {
   }, [navigate]);
 
   const onBDGraphGoBtnClick = useCallback(() => {
-    navigate("/BabyDiaryChart");
+    navigate("/BabyDiaryChart", {
+      state: { crl: loCrl[0], ac: loAc[0], fl: loFl[0], week: loWeek[0] },
+    });
   }, [navigate]);
 
   const outputdate = (e) => {

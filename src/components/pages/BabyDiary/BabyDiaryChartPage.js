@@ -54,15 +54,15 @@ const BabyDiaryChartPage = () => {
   const num = parseInt(week) - 15;
 
   useEffect(() => {
-    setParCrl(parseFloat(crl) - parseFloat(crlmean[num]));
+    setParCrl(parseFloat(crl[0]) - parseFloat(crlmean[num]));
     if (parCrl >= 0) {
       setparCrlCom("길어요.");
     }
-    setParAc(parseFloat(ac) - parseFloat(acmean[num]));
+    setParAc(parseFloat(ac[0]) - parseFloat(acmean[num]));
     if (parAc >= 0) {
       setparAcCom("길어요.");
     }
-    setParFl(parseFloat(fl) - parseFloat(flmean[num]));
+    setParFl(parseFloat(fl[0]) - parseFloat(flmean[num]));
     console.log("여기봐" + parseFloat(parFl));
     if (parFl >= 0) {
       setparFlCom("길어요.");

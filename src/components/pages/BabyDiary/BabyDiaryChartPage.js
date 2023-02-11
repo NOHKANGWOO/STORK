@@ -54,18 +54,39 @@ const BabyDiaryChartPage = () => {
   const num = parseInt(week) - 15;
 
   useEffect(() => {
-    setParCrl(parseFloat(crl[0]) - parseFloat(crlmean[num]));
-    if (parCrl >= 0) {
+    const crldata = parseFloat(crl[0]) - parseFloat(crlmean[num]);
+    setParCrl(crldata);
+    if (crldata >= 0) {
+      console.log(" = " + crldata);
       setparCrlCom("길어요.");
     }
-    setParAc(parseFloat(ac[0]) - parseFloat(acmean[num]));
-    if (parAc >= 0) {
+
+    const acdata = parseFloat(crl[0]) - parseFloat(crlmean[num]);
+    setParAc(acdata);
+    if (acdata >= 0) {
       setparAcCom("길어요.");
     }
-    setParFl(parseFloat(fl[0]) - parseFloat(flmean[num]));
-    console.log("여기봐" + parseFloat(parFl));
-    if (parFl >= 0) {
+
+    const fldata = parseFloat(crl[0]) - parseFloat(crlmean[num]);
+    setParFl(fldata);
+    if (fldata >= 0) {
       setparFlCom("길어요.");
+    }
+    const resultSay =
+      parseFloat(crl[0]) -
+      parseFloat(crlmean[num]) +
+      parseFloat(ac[0]) -
+      parseFloat(acmean[num]) +
+      parseFloat(fl[0]) -
+      parseFloat(flmean[num]);
+    console.log(crl[0]);
+    console.log("resultSay : " + resultSay);
+    console.log("확인용 " + parseFloat(parCrl));
+    if (resultSay >= 3) {
+      setParResult("평균 수치보다 커요");
+    }
+    if (resultSay <= -3) {
+      setParResult("평균 수치보다 작아요");
     }
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
@@ -94,24 +115,6 @@ const BabyDiaryChartPage = () => {
         observer.unobserve(scrollAnimElements[i]);
       }
     };
-  }, []);
-  useEffect(() => {
-    const resultSay =
-      parseFloat(crl[0]) -
-      parseFloat(crlmean[num]) +
-      parseFloat(ac[0]) -
-      parseFloat(acmean[num]) +
-      parseFloat(fl[0]) -
-      parseFloat(flmean[num]);
-    console.log(crl[0]);
-    console.log("resultSay : " + resultSay);
-    console.log("확인용 " + parseFloat(parCrl));
-    if (resultSay >= 3) {
-      setParResult("평균 수치보다 커요");
-    }
-    if (resultSay <= -3) {
-      setParResult("평균 수치보다 작아요");
-    }
   }, []);
 
   return (

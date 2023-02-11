@@ -7,6 +7,7 @@ from dbModule import Database
 from yolov5.yolov5.detect import run
 import cv2
 from PIL import Image
+from yolov5.nlp.nlp import sentiment_predict
 
 app = Flask(__name__)
 
@@ -26,7 +27,16 @@ def hello() :
     test = 1
     return f"요약 : {test}"
     # return {"members" : ["1","2","3",f"{test}"]}
-    #return "ssssssssssssssssssssssssssss"
+    #return "ssssssssssssssssssssssssssss"\
+
+@app.route('/nlp', methods =['POST','GET'])
+def runnlp() :
+    print("runnlp실행")
+    # request.data.decode('unicode-escape')
+    result = sentiment_predict(request.form.get('a'))
+    print(type(result))
+    # result = float(result)
+    return result
 
 @app.route('/startyolo',methods = ['POST','GET'])
 def CR() :

@@ -61,13 +61,13 @@ const BabyDiaryChartPage = () => {
       setparCrlCom("길어요.");
     }
 
-    const acdata = parseFloat(crl[0]) - parseFloat(crlmean[num]);
+    const acdata = parseFloat(ac[0]) - parseFloat(acmean[num]);
     setParAc(acdata);
     if (acdata >= 0) {
       setparAcCom("길어요.");
     }
 
-    const fldata = parseFloat(crl[0]) - parseFloat(crlmean[num]);
+    const fldata = parseFloat(fl[0]) - parseFloat(flmean[num]);
     setParFl(fldata);
     if (fldata >= 0) {
       setparFlCom("길어요.");

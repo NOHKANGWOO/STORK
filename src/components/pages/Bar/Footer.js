@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   const onNAVCheckBtnClick = useCallback(() => {
-    navigate("/Check");
+    navigate("/Inspect");
   }, [navigate]);
 
   const onNAVTipBtnClick = useCallback(() => {
@@ -103,7 +103,7 @@ const Footer = () => {
       </button>
       <button
         className={
-          pathna == "/Check" ? "nav-check-btn success" : "nav-check-btn failure"
+          pathna == "/Inspect" ? "nav-check-btn success" : "nav-check-btn failure"
         }
         onClick={onNAVCheckBtnClick}
       >

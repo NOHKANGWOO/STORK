@@ -33,6 +33,7 @@ import JoinPage from "./components/pages/Account/JoinPage";
 import LaborHelpPage from "./components/pages/Labor/LaborHelpPage";
 import CalendarMain from "./components/pages/Calendar/CalendarMain";
 import InspectStart from "./components/pages/Inspect/InspectStart";
+import InspectClick from "./components/pages/Inspect/InspectClick/InspectClick";
 
 function App() {
   const action = useNavigationType();
@@ -99,6 +100,7 @@ function App() {
       <Route path="/LaborHelp" element={<LaborHelpPage />} />
       <Route path="/Calendar" element={<CalendarMain/>} />
       <Route path="/Inspect" element={<InspectStart />} />
+      <Route path="/Ins_click" element={<InspectClick />} />
     </Routes>
   );
 }

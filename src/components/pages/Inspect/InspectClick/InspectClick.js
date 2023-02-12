@@ -27,12 +27,30 @@ const InspectClick = () => {
     }
   }
 
+  function next_num (){
+    if(num >= info.subtitle.length -1){
+      setNum(0);
+    }else{
+      setNum(num+1);
+    }
+  }
+
+  function pre_num() {
+    if(num <= 0){
+      setNum(info.subtitle.length-1);
+    }else{
+      setNum(num-1);
+    }
+  }
+
 
   function check (){
     // console.log(temp_title)
     // console.log(Data[0][1][2].title);
     // console.log(temp_title)
-    console.log(info)
+    // console.log(info.subtitle[0])
+    console.log(info.cmts[1][0])
+
   }
 
   return (
@@ -41,34 +59,36 @@ const InspectClick = () => {
     <div className="inspect-click">
       <div className="empty_box_inspect_click"></div>
       <div className="parent_inspect_click">
-        <div className="div_inspect_click" onClick={check}>{info.title}</div>
-        <b className="b2_inspect_click">{info.subtitle[0]}</b>
+        {/* <div className="div_inspect_click" >{info.title}</div> */}
+        <b className="b2_inspect_click" onClick={check}>{info.div=="증상"?info.subtitle[num]:info.title}</b>
         <img
           className="icon-arrow-ios-back_inspect_click"
           alt=""
           src={_icon_arrow_ios_back_click}
+          onClick = {pre_num}
         />
         <img
           className="icon-arrow-ios-forward_inspect_click"
           alt=""
           src={_icon_arrow_ios_forward_click}
-          onClick= {()=>{setNum(num+1)}}
+          onClick= {next_num}
         />
       </div>
-        {info.sub[0].map((sub)=>{
-          info.cmts[0].map((cmt)=>{
-
-            return(<InspectCmts/>)
+        { 
+          info.sub[num].map((arr,index)=>{
+            // if(info.div == "증상"){
+              return(<InspectCmts index = {index}  sub = {info.sub[num]} cmts = {info.cmts[num]}/>)
+            // }else if(info.div == "검사"){
+            //   return(<>
+            //           <InspectCmts index = {0} sub = {info.subtitle[0]} cmts = {info.cmts}/>
+            //           <InspectCmts index = {1} sub = {info.subtitle[0]} cmts = {info.cmts}/>
+            //          </>);
+            // }
           })
-
-
-        })}
-        {/* <InspectCmts />
-        <InspectCmts />
-        <InspectCmts />
-        <InspectCmts />
-        <InspectCmts /> */}
+        }
+     
     </div>
+        <div style={{height : "60px"}}></div>
     <Footer />
     </>
   );

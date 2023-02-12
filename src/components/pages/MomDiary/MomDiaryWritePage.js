@@ -49,7 +49,7 @@ const MomDiaryWritePage = () => {
     //   });
     try {
       const res = await axios.post("nlp", formData)
-      const score = Math.round(parseFloat(res.data[0])*100)
+      console.log(res)
       axios
         .post("http://127.0.0.1:3001/diarywrite", {
           seq:JSON.parse(localStorage.getItem("user")).seq,
@@ -57,7 +57,7 @@ const MomDiaryWritePage = () => {
           date: getToday(),
           kg: kg,
           detail: detail,
-          score : score,
+          score : Math.round(parseFloat(res.data[0])*100),
         })
         .then(
           navigate("/MomDiary")
@@ -65,6 +65,7 @@ const MomDiaryWritePage = () => {
         .catch(() => {
           console.log("데이터 보내기 실패");
         });
+      console.log(res)
     } catch (error) {
       console.log(error)
     }

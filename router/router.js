@@ -291,8 +291,9 @@ router.post("/diarywrite", function (request, response) {
   let date = request.body.date;
   let kg = request.body.kg;
   let detail = request.body.detail;
-  let sql = `insert into momlog(mb_seq,ml_title,ml_date,ml_weight,ml_content) values(?,?,?,?,?)`;
-  conn.query(sql, [seq,title,date,kg,detail], function (err, rows) {
+  let score = request.body.score
+  let sql = `insert into momlog(mb_seq,ml_title,ml_date,ml_weight,ml_content, ml_con) values(?,?,?,?,?,?)`;
+  conn.query(sql, [seq,title,date,kg,detail,score], function (err, rows) {
     if (!err) {
       console.log("산모수첩 작성 성공");
     } else {

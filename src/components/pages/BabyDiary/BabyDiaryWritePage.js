@@ -191,7 +191,7 @@ const BabyDiaryWritePage = () => {
               <div className="bdwfl-text-div1">
                 <textarea
                   className="BDWCRL_textarea"
-                  placeholder="머리"
+                  placeholder="태아크기"
                   value={crl}
                   onChange={(e) => {
                     setcrl(e.target.value);

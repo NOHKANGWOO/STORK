@@ -1,3 +1,4 @@
+import { display } from "@mui/system";
 import "../../../styles/Inspect/InspectClick/InspectCmts.css"
 
 
@@ -12,10 +13,15 @@ const InspectCmts = ( props) => {
   function check(){
     console.log(index)
   }
+
+  let sub_style = {};
+  if(sub[index] == ""){
+    sub_style = {display : "none"};
+  }
   return (
     <div className="inspect-cmts">
       <div className="inspect-cmts-child" />
-      <b className="b_inspect_cmts" onClick={check}>{sub[index]}</b>
+      <b className="b_inspect_cmts" style={sub_style} onClick={check}>{sub[index]}</b>
       <b className="b1_inspect_cmts">
         <p className="p_inspect_cmts">
           {cmts[index]}

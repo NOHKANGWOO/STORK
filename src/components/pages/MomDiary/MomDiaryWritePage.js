@@ -23,30 +23,51 @@ const MomDiaryWritePage = () => {
   const formData = new FormData();
   formData.append('a', detail)
 
-  const onMDwritecompleteDivClick = (e) => {
+  const onMDwritecompleteDivClick = async(e) => {
     e.preventDefault();
-    axios
-      .post("/nlp", formData)
-      .then((res)=>{
-        axios
-          .post("http://127.0.0.1:3001/diarywrite", {
-            seq:JSON.parse(localStorage.getItem("user")).seq,
-            title: title,
-            date: getToday(),
-            kg: kg,
-            detail: detail,
-            score : Math.round(parseFloat(res.data[0])*100),
-          })
-          .then(
-            navigate("/MomDiary")
-          )
-          .catch(() => {
-            console.log("데이터 보내기 실패");
-          });
-          })
-      .catch(() => {
-        console.log("데이터 보내기 실패");
-      });
+    // axios
+    //   .post("/nlp", formData)
+    //   .then((res)=>{
+    //     axios
+    //       .post("http://127.0.0.1:3001/diarywrite", {
+    //         seq:JSON.parse(localStorage.getItem("user")).seq,
+    //         title: title,
+    //         date: getToday(),
+    //         kg: kg,
+    //         detail: detail,
+    //         score : Math.round(parseFloat(res.data[0])*100),
+    //       })
+    //       .then(
+    //         navigate("/MomDiary")
+    //       )
+    //       .catch(() => {
+    //         console.log("데이터 보내기 실패");
+    //       });
+    //       })
+    //   .catch(() => {
+    //     console.log("데이터 보내기 실패");
+    //   });
+    try {
+      const res = await axios.post("nlp", formData)
+      const score = Math.round(parseFloat(res.data[0])*100)
+      axios
+        .post("http://127.0.0.1:3001/diarywrite", {
+          seq:JSON.parse(localStorage.getItem("user")).seq,
+          title: title,
+          date: getToday(),
+          kg: kg,
+          detail: detail,
+          score : score,
+        })
+        .then(
+          navigate("/MomDiary")
+        )
+        .catch(() => {
+          console.log("데이터 보내기 실패");
+        });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const onMDwriteCancleDivClick = useCallback(() => {

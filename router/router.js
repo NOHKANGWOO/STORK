@@ -338,6 +338,27 @@ router.post("/outputdate", function (request, response) {
   });
 });
 
+router.post('/checkmomlog', function(req,res){
+  let today = req.body.today;
+  let sql = `select * from momlog where ml_date=?`;
+  conn.query(sql, [today], function (err, rows) {
+    if (rows.length>0) {
+      console.log("데이터 있음 : 성공");
+      res.json({
+        result: "success",
+      });
+    }else if(rows.length==0){
+      console.log("데이터 없음 : 성공");
+      res.json({
+        result: "success0",
+      });
+    } else {
+      console.log("실패");
+      res.json({ result: "false" });
+    }
+  });
+})
+
 // 차트 정보
 router.post("/chartdata", function (request, response) {
   let ml_date = []

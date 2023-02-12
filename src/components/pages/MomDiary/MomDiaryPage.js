@@ -46,7 +46,23 @@ const MomDiaryPage = () => {
   },[])
 
   const onWriteBtnClick = () => {
-    navigate("/MomDiaryWrite"); 
+    axios
+      .post("http://127.0.0.1:3001/checkmomlog", {
+        today:getToday(),
+      })
+      .then((res)=>{
+        if (res.data.result == "success") {
+          console.log("작성된 일기가 있습니다.")
+        } else if(res.data.result == "success"){
+          navigate("/MomDiaryWrite"); 
+        } else {
+          console.log("오류?");
+        }
+      })
+      .catch(() => {
+        console.log("데이터 보내기 실패");
+      });
+    
   };
 
   const onDepressedGoBtnClick = () => {

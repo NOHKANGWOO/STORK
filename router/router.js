@@ -414,11 +414,12 @@ router.post("/Labor_data", function (request, response) {
   let sql = `select labor_time from laborpain where(mb_seq = (?))`;
   conn.query(sql, [mb_seq], function (err, rows) {
     if (!err) {
+      console.log(rows,"ddddfdfdf");
+      
       response.json({
-        data: rows,
+        data: rows.reverse(),
       });
     } else {
-      console.log("ss ");
     }
   });
 });

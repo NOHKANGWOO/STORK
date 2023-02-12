@@ -162,9 +162,6 @@ const LaborPage = () => {
         cycle_sec = parseInt((cycle % (1000 * 60)) / 1000);
       }
       console.log(data);
-      console.log("시", term_hour);
-      console.log("분", term_min);
-      console.log("초", term_sec);
 
       test = data.splice(0, 0, {
         sec: temp,
@@ -218,18 +215,20 @@ const LaborPage = () => {
         if (data[i] == undefined) {
           break;
         }
-        if (15 <= total_arr[i] <= 50 && 300 <= total_cycle_arr <= 900) {
+        if (15 <= total_arr[i] && total_arr[i] <= 50 && 300 <= total_cycle_arr[i] && total_cycle_arr[i] <= 900) {
           count_1++;
         }
-        if (30 <= total_arr[i] <= 60 && 240 <= total_cycle_arr <= 420) {
+        if (30 <= total_arr[i] && total_arr[i] <= 60 && 240<= total_cycle_arr[i] && total_cycle_arr[i] <= 420) {
           count_2++;
+          // 30   60   240  420
         }
-        if (50 <= total_arr[i] <= 90 && 120 <= total_cycle_arr <= 180) {
+        if (50 <= total_arr[i] && total_arr[i] <= 90 && 120 <= total_cycle_arr[i] &&  total_cycle_arr[i] <= 180) {
           count_3++;
         }
       }
       // 진진통 판별 시
       if (count_2 == 4) {
+        console.log(count_2,"count2x")
         setAlert("block");
         setTimeout(function () {
           setAlert("none");
@@ -239,7 +238,6 @@ const LaborPage = () => {
       }
       if (count_3 == 4) {
       }
-      console.log("sssss");
 
       setSec(0);
       setMin(0);

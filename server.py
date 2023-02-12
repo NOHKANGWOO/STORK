@@ -32,10 +32,9 @@ def hello() :
 @app.route('/nlp', methods =['POST','GET'])
 def runnlp() :
     print("runnlp실행")
-    # request.data.decode('unicode-escape')
-    result = sentiment_predict(request.form.get('a'))
-    print(type(result))
-    # result = float(result)
+    result = request.form.get('a')
+    result = sentiment_predict(result)
+    print(result)
     return result
 
 @app.route('/startyolo',methods = ['POST','GET'])

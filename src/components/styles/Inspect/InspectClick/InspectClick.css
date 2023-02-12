@@ -1,0 +1,56 @@
+.b2_inspect_click,
+.div_inspect_click {
+  position: absolute;
+  left: 0;
+  letter-spacing: -0.2px;
+  display: inline-block;
+  width: 375px;
+}
+.div_inspect_click {
+  top: 28px;
+  font-weight: 100;
+}
+.b2_inspect_click {
+  top: 87.8px;
+  font-size: 25px;
+  color: #d95f6e;
+  height: 39.89px;
+}
+.icon-arrow-ios-back_inspect_click,
+.icon-arrow-ios-forward_inspect_click,
+.parent_inspect_click {
+  position: absolute;
+  top: 93px;
+  left: 26px;
+  width: 30px;
+  height: 30px;
+}
+.icon-arrow-ios-forward_inspect_click,
+.parent_inspect_click {
+  top: 89px;
+  left: 333px;
+}
+.parent_inspect_click {
+  top: 60px;
+  left: 0;
+  width: 375px;
+  height: 695px;
+  overflow-x: auto;
+}
+.inspect-click {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 30px;
+  color: #000;
+  font-family: var(--font-poppins);
+  overflow-y: auto;
+}
+.empty_box_inspect_click{
+  height: 200px;
+  /* background-color: #000; */
+  width: 10px;
+}

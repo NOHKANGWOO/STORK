@@ -48,7 +48,7 @@ const MomDiaryWritePage = () => {
     //     console.log("데이터 보내기 실패");
     //   });
     try {
-      const res = await axios.post("nlp", formData)
+      const res = await axios.post("/nlp", formData)
       console.log(res)
       axios
         .post("http://127.0.0.1:3001/diarywrite", {

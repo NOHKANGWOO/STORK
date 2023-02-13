@@ -53,7 +53,7 @@ const MomDiaryPage = () => {
       .then((res)=>{
         if (res.data.result == "success") {
           console.log("작성된 일기가 있습니다.")
-        } else if(res.data.result == "success"){
+        } else if(res.data.result == "success0"){
           navigate("/MomDiaryWrite"); 
         } else {
           console.log("오류?");

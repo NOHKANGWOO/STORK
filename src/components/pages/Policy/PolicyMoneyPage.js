@@ -1,5 +1,6 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 import back_text from "../../../assets/svg/Policy/PolicyMoney/back_text.svg";
 import choice1_title from "../../../assets/svg/Policy/PolicyMoney/choice1_title.svg";
@@ -26,6 +27,40 @@ import "../../styles/Policy/PolicyMoneyPage.css";
 
 const PolicyMoneyPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const region = location.state;
+  let [first_baby, setFir] = useState([]);
+  let [second_baby, setSeo] = useState([]);
+  let [third_baby, setThi] = useState([]);
+  let [fourth_baby, setFou] = useState([]);
+  let [fifth_baby, setFif] = useState([]);
+  let [target, setTarget] = useState([]);
+  let [approach, setApproach] = useState([]);
+  let [significant, setSignificant] = useState([]);
+
+  useEffect(()=>{
+    axios
+      .post("http://127.0.0.1:3001/region", {
+        reg:region
+      })
+      .then((res)=>{
+        if (res.data.result == "success") {
+          setFir(res.data.first_baby);
+          setSeo(res.data.second_baby);
+          setThi(res.data.third_baby);
+          setFou(res.data.fourth_baby);
+          setFif(res.data.fifth_baby);
+          setTarget(res.data.target);
+          setApproach(res.data.approach);
+          setSignificant(res.data.significant);
+        } else {
+          console.log("데이터 없거나 오류?");
+        }
+      })
+      .catch(() => {
+        console.log("데이터 보내기 실패");
+      });
+  },[])
 
   const onGoBtnClick = useCallback(() => {
     navigate("/PolicyMoneyChoice");
@@ -41,7 +76,7 @@ const PolicyMoneyPage = () => {
       </div>
       <div className="num1-write">
         <div className="num1-write-div" />
-        <span className="num1-write-text">광주 광역시 광산구</span>
+        <span className="num1-write-text">{region}</span>
       </div>
       <div className="num2">
         <div className="num5-div" />
@@ -50,19 +85,19 @@ const PolicyMoneyPage = () => {
       <div className="num2-write">
         <div className="num2-write-div" />
         <img className="won-icon" alt="" src={won} />
-        <span className="num2-5-text">150</span>
+        <span className="num2-5-text">{fifth_baby}</span>
         <img className="num2-5-icon" alt="" src={num2_5} />
         <img className="won-icon1" alt="" src={won} />
-        <span className="num2-4-text">140</span>
+        <span className="num2-4-text">{fourth_baby}</span>
         <img className="num2-4-icon" alt="" src={num2_4} />
         <img className="won-icon2" alt="" src={won} />
-        <span className="num2-3-text">130</span>
+        <span className="num2-3-text">{third_baby}</span>
         <img className="num2-3-icon" alt="" src={num2_3} />
         <img className="won-icon3" alt="" src={won} />
-        <span className="num2-2-text">120</span>
+        <span className="num2-2-text">{second_baby}</span>
         <img className="num2-2-icon" alt="" src={num2_2} />
         <img className="won-icon4" alt="" src={won4} />
-        <span className="num2-1-text">110</span>
+        <span className="num2-1-text">{first_baby}</span>
         <img className="num2-1-icon" alt="" src={num2_1} />
       </div>
       <div className="num3">
@@ -72,7 +107,7 @@ const PolicyMoneyPage = () => {
       <div className="num3-write">
         <div className="num3-write-div" />
         <span className="num4-write-text">
-          광산구에 주민등록을 두고 출생신고한 모든 가정
+          {target}
         </span>
       </div>
       <div className="num4">
@@ -82,9 +117,7 @@ const PolicyMoneyPage = () => {
       <div className="num4-write">
         <div className="num4-write-div" />
         <span className="num4-write-text">
-          관할 동 행정복지센터
-          <br></br>
-          신청일로부터 익월 10일이내 신청계좌로 입금
+          {approach}
         </span>
       </div>
       <div className="num5">
@@ -94,11 +127,7 @@ const PolicyMoneyPage = () => {
       <div className="num5-write">
         <div className="num5-write-div" />
         <span className="num5-write-text">
-          쌍둥이 50만원 추가 지급
-          <br></br>
-          세쌍둥이 이상 100만원
-          <br></br>
-          남성장애인(심한장애) 100만원
+          {significant}
         </span>
       </div>
       <img className="first-meet-icon" alt="" src={first_meet} />

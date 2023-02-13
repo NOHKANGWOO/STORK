@@ -359,6 +359,49 @@ router.post('/checkmomlog', function(req,res){
   });
 })
 
+//지역정책
+router.post("/region", function (request, response) {
+  let first_baby = [];
+  let second_baby = [];
+  let third_baby = [];
+  let fourth_baby = [];
+  let fifth_baby = [];
+  let target = [];
+  let approach = [];
+  let significant = [];
+  let reg = request.body.reg;
+  let sql = `select * from money where area=?`;
+  conn.query(sql, [reg], function (err, rows) {
+    if (rows.length>0) {
+      console.log("데이터 있음 : 성공");
+      for (let i = 0; i < rows.length; i++) {
+        first_baby.push(rows[i].first_baby);
+        second_baby.push(rows[i].second_baby);
+        third_baby.push(rows[i].third_baby);
+        fourth_baby.push(rows[i].fourth_baby);
+        fifth_baby.push(rows[i].fifth_baby);
+        target.push(rows[i].target);
+        approach.push(rows[i].approach);
+        significant.push(rows[i].significant);
+      }
+      response.json({
+        result: "success",
+        first_baby:first_baby,
+        second_baby:second_baby,
+        third_baby:third_baby,
+        fourth_baby:fourth_baby,
+        fifth_baby:fifth_baby,
+        target:target,
+        approach:approach,
+        significant:significant,
+      });
+    } else {
+      console.log("실패");
+      response.json({ result: "false" });
+    }
+  });
+});
+
 // 차트 정보
 router.post("/chartdata", function (request, response) {
   let ml_date = []

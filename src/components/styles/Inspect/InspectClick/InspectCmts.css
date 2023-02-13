@@ -1,5 +1,5 @@
 .inspect-cmts-child {
-  position: absolute;
+  /* position: absolute;
   height: 90%;
   width: 88.53%;
   top: 5.33%;
@@ -9,22 +9,26 @@
   background-color: rgba(237, 161, 161, 0.2);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px dashed #000;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 .b_inspect_cmts {
-  position: absolute;
-  width: 77.87%;
+  /* position: absolute; */
+  width: 100%;
   top: 8.06%;
-  left: 10.67%;
+  margin-left: 9%;
   letter-spacing: -0.2px;
   display: inline-block;
+  font-size: 18px;
+  text-align: left;
 }
 .p_inspect_cmts {
   margin-block-start: 0;
   margin-block-end: 0;
+  text-align: left;
+
 }
 .b1_inspect_cmts {
-  position: absolute;
+  /* position: absolute; */
   width: 80.53%;
   top: 22.73%;
   left: 10.67%;
@@ -34,7 +38,7 @@
   color: rgba(26, 24, 24, 0.7);
 }
 .inspect-cmts {
-  position: relative;
+  /* position: relative; */
   background-color: #fff;
   width: 100%;
   height: 300px;
@@ -43,4 +47,16 @@
   font-size: 17px;
   color: #000;
   font-family: var(--font-poppins);
+}
+.box_ins_click{
+  /* height: 90%; */
+  width: 88.53%;
+  margin-bottom: 7%;
+  background-color: rgba(237, 161, 161, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px dashed #000;
+  box-sizing: border-box; 
+  border-radius: 5%;
+  margin-left: 5%;
+
 }

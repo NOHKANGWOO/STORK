@@ -49,7 +49,7 @@ const InspectClick = () => {
     // console.log(Data[0][1][2].title);
     // console.log(temp_title)
     // console.log(info.subtitle[0])
-    console.log(info.cmts[1][0])
+    console.log(info)
 
   }
 
@@ -59,7 +59,8 @@ const InspectClick = () => {
     <div className="inspect-click">
       <div className="empty_box_inspect_click"></div>
       <div className="parent_inspect_click">
-        {/* <div className="div_inspect_click" >{info.title}</div> */}
+        <div className="div_inspect_click" >{info.title}</div>
+        <div className="ins_total_cmts">
         <b className="b2_inspect_click" onClick={check}>{info.div=="증상"?info.subtitle[num]:info.title}</b>
         <img
           className="icon-arrow-ios-back_inspect_click"
@@ -73,20 +74,23 @@ const InspectClick = () => {
           src={_icon_arrow_ios_forward_click}
           onClick= {next_num}
         />
-      </div>
         { 
           info.sub[num].map((arr,index)=>{
-            // if(info.div == "증상"){
-              return(<InspectCmts index = {index}  sub = {info.sub[num]} cmts = {info.cmts[num]}/>)
-            // }else if(info.div == "검사"){
-            //   return(<>
-            //           <InspectCmts index = {0} sub = {info.subtitle[0]} cmts = {info.cmts}/>
-            //           <InspectCmts index = {1} sub = {info.subtitle[0]} cmts = {info.cmts}/>
-            //          </>);
-            // }
-          })
-        }
-     
+              return(
+              <>
+              <InspectCmts index = {index}  sub = {info.sub[num]} cmts = {info.cmts[num]}/>
+              
+              </>)
+              // }else if(info.div == "검사"){
+                //   return(<>
+                //           <InspectCmts index = {0} sub = {info.subtitle[0]} cmts = {info.cmts}/>
+                //           <InspectCmts index = {1} sub = {info.subtitle[0]} cmts = {info.cmts}/>
+                //          </>);
+                // }
+              })
+            }
+            </div>
+        </div>
     </div>
         <div style={{height : "60px"}}></div>
     <Footer />

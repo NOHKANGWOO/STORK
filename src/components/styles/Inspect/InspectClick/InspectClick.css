@@ -9,14 +9,20 @@
 .div_inspect_click {
   top: 28px;
   font-weight: 100;
+  font-size: 18px;
   /* display: none; */
+  background-color: bisque;
+  width: 80%;
+  margin-bottom: 10%;
 }
 .b2_inspect_click {
   width: 270px;
   top: 87.8px;
-  font-size: 25px;
+  font-size: 15px;
+  font-weight: bolder;
   color: #d95f6e;
   height: 39.89px;
+  text-decoration: underline;
 }
 .icon-arrow-ios-back_inspect_click,
 .icon-arrow-ios-forward_inspect_click,
@@ -36,7 +42,7 @@
   top: 60px;
   left: 0;
   width: 375px;
-  height: 100px;
+  height: auto;
   overflow-x: auto;
 }
 .inspect-click {
@@ -61,4 +67,15 @@
   position: absolute;
   top: 90px;;
   /* left: 5px; */
+}
+.ins_total_cmts{
+  /* background-color: #d95f6e; */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid  #eda1a1;
+  box-sizing: border-box; 
+  border-radius: 3%;
+  margin-left: 5%;
+  width: 88.53%;
+  margin-bottom: 7%;
+  
 }

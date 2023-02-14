@@ -572,3 +572,8 @@
   text-align: center;
   font-weight: bold;
 }
+.bdcrl-title-icon{
+  width: 50%;
+  height: 50%;
+  margin-left: 2px;
+}

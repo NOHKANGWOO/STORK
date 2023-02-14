@@ -531,7 +531,6 @@ router.post("/babywrite", upload.single("img"), (req, res) => {
   let detail = req.body.detail;
   let week = req.body.week;
   let img = req.file.buffer;
-
   let sql = `insert into babylog(mb_seq,bl_date,bl_detail,bl_week,bl_crl,bl_ac,bl_fl,bl_hos,bl_img) values(?,?,?,?,?,?,?,?,?)`;
 
   conn.query(

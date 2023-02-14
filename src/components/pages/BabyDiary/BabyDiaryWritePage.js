@@ -17,6 +17,12 @@ import bdwweektitle from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwweekti
 
 import upload_btnimg from "../../../assets/images/Diary/upload_btnimg.png";
 
+
+import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg"
+import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg"
+import bpd from "../../../assets/svg/BabyDiary/BabyDiaryChart/BPD.svg"
+
+
 import "../../styles/BabyDiary/BabyDiaryWritePage.css";
 
 import Header from "../Bar/Header";
@@ -185,7 +191,9 @@ const BabyDiaryWritePage = () => {
             <img className="bdw-cmdiv-text-icon" alt="" src={bdw_cmdiv_text} />
             <div className="bdwcrl-title-div">
               <div className="bdwfl-title-div1" />
-              <img className="bdwcrl-title-icon" alt="" src={bdwcrl_title} />
+              {/* <img className="bdwcrl-title-icon" alt="" src={bdwcrl_title} /> */}
+
+              <img className="bdwcrl-title-icon" alt="" src={bpd} />
             </div>
             <div className="bdwcrl-text-div">
               <div className="bdwfl-text-div1">

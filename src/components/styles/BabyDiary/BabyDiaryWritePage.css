@@ -227,8 +227,11 @@ label:active{
   position: absolute;
   top: 7.31px;
   left: 10.17px;
-  width: 26.67px;
-  height: 10.86px;
+  /* width: 26.67px;
+  height: 10.86px; */
+  width: 25px;
+  height: 9.86px;
+  margin-left: 2px;
 }
 .bdwcrl-title-div {
   position: absolute;

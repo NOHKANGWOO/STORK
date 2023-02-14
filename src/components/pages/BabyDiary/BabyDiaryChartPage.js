@@ -14,6 +14,10 @@ import bdc_otherbaby_text from "../../../assets/svg/BabyDiary/BabyDiaryChart/bdc
 import detail_btn_text from "../../../assets/svg/BabyDiary/BabyDiaryChart/detail_btn_text.svg";
 import BabyChart from "./BabyChart";
 
+import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg"
+import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg"
+
+
 import "../../styles/BabyDiary/BabyDiaryChartPage.css";
 
 import Header from "../Bar/Header";
@@ -149,7 +153,8 @@ const BabyDiaryChartPage = () => {
         <div className="bd-chart-detail-div1" />
         <div className="bdc-crl-div">
           <div className="bdc-crl-div1" />
-          <img className="bdc-crl-text1-icon" alt="" src={bdc_crl_text1} />
+          {/* <img className="bdc-crl-text1-icon" alt="" src={bdc_crl_text1} /> */}
+          <img className="bdc-crl-text1-icon" alt="" src={bpd_temp2} />
           <div className="bdc-crl-num-text">
             {Math.round(Math.abs(parseFloat(parCrl)) * 10) / 10}
           </div>

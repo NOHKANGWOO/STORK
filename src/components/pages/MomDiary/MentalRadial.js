@@ -1,6 +1,25 @@
 import ApexChart from "react-apexcharts";
 
 const Radialbar = (props) => {
+  const col =  ()=>{
+    if (props.val[0] > 70) {
+      return ["#F5A9A9"];
+    } else if (props.val[0] > 30) {
+      return ["#F2F5A9"];
+    } else {
+      return ["#A9D0F5"];
+    }
+  }
+
+  const textcol =  ()=>{
+    if (props.val[0] > 70) {
+      return "#F5A9A9";
+    } else if (props.val[0] > 30) {
+      return "#F2F5A9";
+    } else {
+      return "#A9D0F5";
+    }
+  }
   const donutData = {
     series: [props.val],
     options: {
@@ -8,17 +27,7 @@ const Radialbar = (props) => {
         type: "radialBar",
       },
       labels: [""],
-      colors: [
-        function () {
-          if (donutData.series < 30) {
-            return "#F5A9A9";
-          } else if (donutData.series < 70) {
-            return "#F2F5A9";
-          } else {
-            return "#A9D0F5";
-          }
-        },
-      ],
+      colors: col(),
       plotOptions: {
         radialBar: {
           offsetY: -37,
@@ -35,9 +44,9 @@ const Radialbar = (props) => {
             },
             value: {
               offsetY: -1,
-              color: "#B2B2B2",
+              color: "#4a4a4a",
               fontSize: "40px",
-              // color: "#EA7171",
+              // color: textcol(),
               fontWeight: "bold",
               show: true,
             },
@@ -46,6 +55,7 @@ const Radialbar = (props) => {
       },
     },
   };
+  console.log(props.val[0])
   return (
     <div>
       <ApexChart

@@ -27,6 +27,13 @@ const InspectClick = () => {
     }
   }
 
+  let arrow_style;
+  if(info.div == "검사"){
+    arrow_style = {display : 'none'}
+  }else{
+    arrow_style = {display : 'block'}
+  }
+
   function next_num (){
     if(num >= info.subtitle.length -1){
       setNum(0);
@@ -67,12 +74,14 @@ const InspectClick = () => {
           alt=""
           src={_icon_arrow_ios_back_click}
           onClick = {pre_num}
+          style = {arrow_style}
         />
         <img
           className="icon-arrow-ios-forward_inspect_click"
           alt=""
           src={_icon_arrow_ios_forward_click}
           onClick= {next_num}
+          style = {arrow_style}
         />
         { 
           info.sub[num].map((arr,index)=>{

@@ -6,6 +6,8 @@
     left: 58.13%;
     letter-spacing: -0.2px;
     display: inline-block;
+  overflow: hidden;
+    
   }
   .inspect-right-child {
     position: absolute;
@@ -17,6 +19,8 @@
     left: 50.4%;
     border-right: 2px solid #d9d9d9;
     box-sizing: border-box;
+  overflow: hidden;
+
   }
   .inspect-right-item {
     position: absolute;
@@ -39,5 +43,7 @@
     font-size: 12px;
     color: #000;
     font-family: var(--font-poppins);
+  overflow: hidden;
+
   }
   

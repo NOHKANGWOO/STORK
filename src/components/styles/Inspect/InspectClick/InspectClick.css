@@ -43,7 +43,7 @@
   left: 0;
   width: 375px;
   height: auto;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 .inspect-click {
   position: relative;
@@ -78,4 +78,11 @@
   width: 88.53%;
   margin-bottom: 7%;
   
+}
+
+.inspect-click{
+  -ms-overflow-style: none;
+}
+.inspect-click::-webkit-scrollbar{
+ display:none;
 }

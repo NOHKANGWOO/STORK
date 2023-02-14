@@ -542,13 +542,15 @@
   justify-content: center;
 }
 .parent_cale_main {
-  height: 85.28%;
+  height: 695px;
   width: 100%;
   top: 7.36%;
   right: 0;
   bottom: 7.36%;
   left: 0;
   overflow-y: auto;
+  /* overflow: hidden;  */
+  overflow-x: hidden;
 }
 .calendar-main {
   position: relative;
@@ -629,4 +631,10 @@
 }
 .cale_time_btn{
   left: 30%;
+}
+.parent_cale_main{
+  -ms-overflow-style: none;
+}
+.parent_cale_main::-webkit-scrollbar{
+ display:none;
 }

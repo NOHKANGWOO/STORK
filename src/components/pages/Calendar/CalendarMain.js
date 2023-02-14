@@ -73,6 +73,8 @@ const CalendarMain = () => {
     setLongTerm(end_blood);
 
   }
+  
+  let input_place = "    "+month+"월" + date+"일에 일정 추가";
 
   //  달을 넘길 때 동작
   useEffect(()=>{
@@ -278,7 +280,9 @@ const CalendarMain = () => {
   // 버튼 클릭 시 그림자 효과 
   function ch_style(){
     setBtnStyle({boxShadow : "none"});
-
+    document.getElementsByClassName("calendar_time")[0].value ="";
+    document.getElementsByClassName("calendar_memo")[0].value ="";
+    
     // 값 전달 
     if(memo !=undefined){
       axios
@@ -301,6 +305,9 @@ const CalendarMain = () => {
                            cal_content : memo}));
 
     }
+  
+    
+    setMemo(undefined);
     myTimer();
   }
   var myTimer = setTimeout(function() {
@@ -342,6 +349,7 @@ const CalendarMain = () => {
       // 시간 select 창
       let times = [];
       let temp;
+      // times.push(<Button className="cale_time_btn" onClick={handleClose}>시간미정</Button>);
       for(let i = 0; i <=24 ;i++){
         if(i<10){ temp = "0"+i}
         else{
@@ -430,7 +438,7 @@ const CalendarMain = () => {
 
         {/* 일정 입력 창 */}
         <div className="memo_box">
-          <input className="calendar_memo" placeholder="    2월 3일에 일정추가" onChange={(e)=>{setMemo(e.target.value)}}></input>
+          <input className="calendar_memo" placeholder= {input_place} onChange={(e)=>{setMemo(e.target.value)}}></input>
           <div className="calendar_time" onClick={handleClickOpen} >{calen_time}</div>
           <div className="calendar_sub" style= {btnStyle}  onClick={ch_style}>+</div>
         </div>

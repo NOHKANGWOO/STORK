@@ -277,7 +277,7 @@ const LaborPage = () => {
 
   function ch() {
     let now = new Date();
-    console.log(data);
+    console.log(now.getTime());
     setAlert("block");
     setTimeout(function () {
       setAlert("none");

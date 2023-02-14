@@ -202,3 +202,11 @@
   color: var(--color-white);
   font-family: "PoetsenOne-Regular";
 }
+
+.labor-compo-inputdiv{
+  -ms-overflow-style: none;
+}
+.labor-compo-inputdiv::-webkit-scrollbar{
+ display:none;
+}
+

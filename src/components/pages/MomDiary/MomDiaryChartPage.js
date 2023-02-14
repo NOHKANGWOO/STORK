@@ -43,7 +43,7 @@ const MomDiaryChartPage = () => {
           setScore(res.data.ml_con.slice(-7));
           setScoredate(res.data.ml_date.slice(-7));
 
-          if(Math.max(...res.data.ml_con.slice(-5))<30){
+          if(Math.min(...res.data.ml_con.slice(-4))>70){
             console.log("문제")
             setScoreglll("우울 지수가 높습니다. 정신의학과 방문을 권유합니다.")
           } else {

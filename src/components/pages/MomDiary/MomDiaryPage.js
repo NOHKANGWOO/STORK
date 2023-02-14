@@ -51,13 +51,14 @@ const MomDiaryPage = () => {
         today:getToday(),
       })
       .then((res)=>{
-        if (res.data.result == "success") {
-          console.log("작성된 일기가 있습니다.")
-        } else if(res.data.result == "success0"){
-          navigate("/MomDiaryWrite"); 
-        } else {
-          console.log("오류?");
-        }
+        navigate("/MomDiaryWrite"); 
+        // if (res.data.result == "success") {
+        //   console.log("작성된 일기가 있습니다.")
+        // } else if(res.data.result == "success0"){
+          
+        // } else {
+        //   console.log("오류?");
+        // }
       })
       .catch(() => {
         console.log("데이터 보내기 실패");

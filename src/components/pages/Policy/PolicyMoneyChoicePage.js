@@ -39,6 +39,7 @@ const PolicyMoneyChoicePage = () => {
 
   const onSeoulBtnClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='choiceDiv']");
+    sty()
     if (anchor) {
       anchor.scrollIntoView({ block: "start", behavior: "smooth" });
     }
@@ -71,7 +72,6 @@ const PolicyMoneyChoicePage = () => {
       <option value="중구">중구</option>
       <option value=" 중구 ">중랑구</option>`
     )
-    sty()
   }, []);
 
   const onKyungkiBtnClick = useCallback(() => {

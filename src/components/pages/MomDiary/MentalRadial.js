@@ -37,7 +37,7 @@ const Radialbar = (props) => {
               offsetY: -1,
               color: "#B2B2B2",
               fontSize: "40px",
-              color: "#EA7171",
+              // color: "#EA7171",
               fontWeight: "bold",
               show: true,
             },

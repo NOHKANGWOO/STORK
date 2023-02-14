@@ -232,6 +232,8 @@ const LaborPage = () => {
         setAlert("block");
         setTimeout(function () {
           setAlert("none");
+          navigate('/emergency')
+
         }, 5000);
       }
       if (count_1 == 4) {
@@ -281,6 +283,7 @@ const LaborPage = () => {
     setAlert("block");
     setTimeout(function () {
       setAlert("none");
+      navigate('/emergency')
     }, 5000);
   }
 

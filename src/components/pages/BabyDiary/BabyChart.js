@@ -76,7 +76,7 @@ const BabyChart = (props) => {
           }}
         />
 
-        <Bar dataKey="아이sss" barSize={30} fill="#EA7171" />
+        <Bar dataKey="아이" barSize={30} fill="#EA7171" />
         <Bar dataKey="평균" barSize={30} fill="#413ea0" />
       </ComposedChart>
     </ResponsiveContainer>

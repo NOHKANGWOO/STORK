@@ -23,8 +23,8 @@ const BabyChart = (props) => {
   ];
 
   const crlmean = [
-    9.5, 10.9, 12.4, 14, 15, 16.2, 17.1, 18.1, 19.1, 20.1, 21.1, 22.1, 23.1,
-    24.1, 25, 26.1, 27.0, 28.5, 29.8, 30.6, 31.6, 32.7, 33.1, 37.8, 35.8,
+    3.31, 3.58, 3.93, 4.32, 4.6, 4.87, 5.18, 5.49, 5.71, 6.07, 6.33, 6.71, 7.0,
+    7.26, 7.38, 7.72, 8.1, 8.2, 8.48, 8.51, 8.71, 8.87, 8.89, 9.07,
   ];
 
   const num = parseInt(week) - 15;
@@ -32,7 +32,7 @@ const BabyChart = (props) => {
   //   Math.abs(parseFloat(parCrl)),
   const data = [
     {
-      name: "CRL",
+      name: "BPD",
       아이: parseFloat(crl),
       평균: parseFloat(crlmean[num]),
     },
@@ -76,7 +76,7 @@ const BabyChart = (props) => {
           }}
         />
 
-        <Bar dataKey="아이" barSize={30} fill="#EA7171" />
+        <Bar dataKey="아이sss" barSize={30} fill="#EA7171" />
         <Bar dataKey="평균" barSize={30} fill="#413ea0" />
       </ComposedChart>
     </ResponsiveContainer>

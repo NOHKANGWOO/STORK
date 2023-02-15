@@ -14,9 +14,8 @@ import bdc_otherbaby_text from "../../../assets/svg/BabyDiary/BabyDiaryChart/bdc
 import detail_btn_text from "../../../assets/svg/BabyDiary/BabyDiaryChart/detail_btn_text.svg";
 import BabyChart from "./BabyChart";
 
-import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg"
-import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg"
-
+import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg";
+import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg";
 
 import "../../styles/BabyDiary/BabyDiaryChartPage.css";
 
@@ -43,8 +42,8 @@ const BabyDiaryChartPage = () => {
   const fl = location.state.fl;
   const week = location.state.week;
   const crlmean = [
-    9.5, 10.9, 12.4, 14, 15, 16.2, 17.1, 18.1, 19.1, 20.1, 21.1, 22.1, 23.1,
-    24.1, 25, 26.1, 27.0, 28.5, 29.8, 30.6, 31.6, 32.7, 33.1, 37.8, 35.8,
+    3.31, 3.58, 3.93, 4.32, 4.6, 4.87, 5.18, 5.49, 5.71, 6.07, 6.33, 6.71, 7.0,
+    7.26, 7.38, 7.72, 8.1, 8.2, 8.48, 8.51, 8.71, 8.87, 8.89, 9.07,
   ];
   const acmean = [
     9.81, 11.05, 11.91, 13.06, 14.4, 15.38, 16.29, 17.37, 18.48, 19.53, 20.16,

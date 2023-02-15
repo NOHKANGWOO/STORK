@@ -18,12 +18,9 @@ import bdcrl_title from "../../../assets/svg/BabyDiary/BabyDiary/bdcrl_title.svg
 
 import bdpen from "../../../assets/images/Diary/bdpen.png";
 
-import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg"
-import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg"
-import bpd from "../../../assets/svg/BabyDiary/BabyDiaryChart/BPD.svg"
-
-
-
+import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg";
+import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg";
+import bpd from "../../../assets/svg/BabyDiary/BabyDiaryChart/BPD.svg";
 
 import "../../styles/BabyDiary/BabyDiaryPage.css";
 
@@ -180,12 +177,11 @@ const BabyDiaryPage = () => {
             <div className="bddiary-text-div" />
           </div>
           <div className="babypic-div">
-            <img src={img} width={"140rem"} height={"165rem"} />
+            <img className="babyD_pic" src={img} />
           </div>
           <img className="bd-cm-title-icon" alt="" src={bd_cm_title} />
           <div className="bdcrl-div">
             <div className="bdfl-div1" />
-            {/* <img className="bdcrl-title-icon" alt="" src={bdcrl_title} /> */}
             <img className="bdcrl-title-icon" alt="" src={bpd} />
           </div>
           <div className="bdcrl-text-div">

@@ -6,7 +6,6 @@ import bdw_cmdiv_text from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdw_cmd
 import bdw_pic_upload_text from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdw_pic_upload_text.svg";
 import bdw_title from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdw_title.svg";
 import bdwac_title from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwac_title.svg";
-import bdwcrl_title from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwcrl_title.svg";
 import bdwdate_title from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwdate_title.svg";
 import bdwfl_cm from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwfl_cm.svg";
 import bdwfl_title from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwfl_title.svg";
@@ -17,11 +16,9 @@ import bdwweektitle from "../../../assets/svg/BabyDiary/BabyDiaryWrite/bdwweekti
 
 import upload_btnimg from "../../../assets/images/Diary/upload_btnimg.png";
 
-
-import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg"
-import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg"
-import bpd from "../../../assets/svg/BabyDiary/BabyDiaryChart/BPD.svg"
-
+import bpd_temp1 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp1.svg";
+import bpd_temp2 from "../../../assets/svg/BabyDiary/BabyDiaryChart/bpd_temp2.svg";
+import bpd from "../../../assets/svg/BabyDiary/BabyDiaryChart/BPD.svg";
 
 import "../../styles/BabyDiary/BabyDiaryWritePage.css";
 
@@ -168,7 +165,7 @@ const BabyDiaryWritePage = () => {
           <div className="bdw-cm-cover">
             <div className="bdw-cm-cover1" />
             <div className="bdw-pic-div">
-              <img src={imgSrc} width="140rem" height="165rem" />
+              <img className="bdw_pic" src={imgSrc} />
             </div>
             <button className="bdw-pic-upload-btn" type="button">
               <img className="upload-btnimg-icon" alt="" src={upload_btnimg} />
@@ -191,15 +188,13 @@ const BabyDiaryWritePage = () => {
             <img className="bdw-cmdiv-text-icon" alt="" src={bdw_cmdiv_text} />
             <div className="bdwcrl-title-div">
               <div className="bdwfl-title-div1" />
-              {/* <img className="bdwcrl-title-icon" alt="" src={bdwcrl_title} /> */}
-
               <img className="bdwcrl-title-icon" alt="" src={bpd} />
             </div>
             <div className="bdwcrl-text-div">
               <div className="bdwfl-text-div1">
                 <textarea
                   className="BDWCRL_textarea"
-                  placeholder="태아크기"
+                  placeholder="머리"
                   value={crl}
                   onChange={(e) => {
                     setcrl(e.target.value);
